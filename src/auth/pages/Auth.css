@@ -4,12 +4,74 @@
 }
 
 .authentication {
-  width: 90%;
-  max-width: 25rem;
+  width: 100%;
+  max-width: 27rem;
   margin: 7rem auto;
-  text-align: center;
+  text-align: left;
 }
 
 .authentication form {
   margin-bottom: 1rem;
+}
+.h2 {
+  position: absolute;
+  width: 272px;
+  height: 43px;
+  left: 38px;
+  top: 97px;
+
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  /* or 121% */
+
+  letter-spacing: 0.36px;
+
+  color: #252529;
+}
+.p {
+  height: 36px;
+  left: 6.91%;
+  right: 6.91%;
+  top: calc(50% - 36px / 2 + 237px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  /* or 138% */
+
+  text-align: center;
+  letter-spacing: -0.08px;
+
+  color: #8a8a8f;
+}
+.forgot {
+  height: 36px;
+  left: 6.91%;
+  right: 6.91%;
+  top: calc(50% - 36px / 2 + 237px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  /* or 138% */
+
+  text-align: right;
+  letter-spacing: -0.08px;
+
+  color: #8a8a8f;
+}
+.center {
+  margin: auto;
+  width: 50%;
+}
+.center2 {
+  margin: auto;
+  width: 30%;
 }
