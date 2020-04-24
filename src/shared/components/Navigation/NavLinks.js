@@ -6,10 +6,7 @@ import "./NavLinks.css";
 
 const NavLinks = props => {
   const auth = useContext(AuthContext);
-  const search = useContext(AuthContext);
   const [showSearch, setShowSearch] = useState(false);
-
-  const changeHandler = event => {};
 
   const searchHandler = () => {
     setShowSearch(!showSearch);
@@ -19,7 +16,7 @@ const NavLinks = props => {
     <ul className="nav-links">
       {showSearch && (
         <li>
-          <input type="text" onChange={search.search} />
+          <input type="text" />
         </li>
       )}
       <li>
@@ -33,12 +30,12 @@ const NavLinks = props => {
       </li>
       {auth.isLoggedIn && (
         <li>
-          <NavLink to={`/${auth.userId}/places`}>MY PLACES</NavLink>
+          <NavLink to={`/${auth.userId}`}>MY SUPPLY</NavLink>
         </li>
       )}
       {auth.isLoggedIn && (
         <li>
-          <NavLink to="/places/new">ADD PLACE</NavLink>
+          <NavLink to="/supply/new">ADD SUPPLY</NavLink>
         </li>
       )}
       {!auth.isLoggedIn && (

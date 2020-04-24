@@ -9,16 +9,12 @@ import "./App.css";
 import Suppliers from "./pages/Suppliers";
 import SupplyPlace from "./pages/SupplyPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import NewSupply from "./pages/NewSupply";
+import Auth from "./auth/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
-import { SearchContext } from "./shared/context/search-context";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
-
-  const search = useCallback(event => {
-    setSearchValue(event.target.value);
-  }, []);
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
@@ -28,28 +24,49 @@ function App() {
     setIsLoggedIn(false);
   }, []);
 
+  let routes;
+
+  if (isLoggedIn) {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Suppliers />
+        </Route>
+        <Route path="/:supplyId" exact>
+          <SupplyPlace />
+        </Route>
+        <Route path="/supply/new" exact>
+          <NewSupply />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Suppliers />
+        </Route>
+        <Route path="/auth">
+          <Auth />
+        </Route>
+        <Route path="/:supplyId" exact>
+          <SupplyPlace />
+        </Route>
+        <Redirect to="/auth" />
+      </Switch>
+    );
+  }
+
   return (
-    <SearchContext.Provider
-      value={{ searchValue: searchValue, search: search }}
+    <AuthContext.Provider
+      value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
-      <AuthContext.Provider
-        value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
-      >
-        <Router>
-          <MainNavigation />
-          <main>
-            <Switch>
-              <Route path="/" exact>
-                <Suppliers />
-              </Route>
-              <Route path="/:supplyId">
-                <SupplyPlace />
-              </Route>
-            </Switch>
-          </main>
-        </Router>
-      </AuthContext.Provider>
-    </SearchContext.Provider>
+      <Router>
+        <MainNavigation />
+        <main>{routes}</main>
+      </Router>
+    </AuthContext.Provider>
   );
 }
 

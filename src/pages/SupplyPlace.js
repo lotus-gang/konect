@@ -8,7 +8,6 @@ const SupplyPlace = props => {
   const SUPPLIERS = [
     {
       id: "p1",
-      industry: "oil",
       name: "Giang Garment Factory",
       imageUrl:
         "https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg",
@@ -23,7 +22,6 @@ const SupplyPlace = props => {
     },
     {
       id: "p2",
-      industry: "oil",
       name: "DBrandt Oilfield Services",
       imageUrl:
         "https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg",
