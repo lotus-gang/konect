@@ -6,8 +6,8 @@ import {
   Switch
 } from "react-router-dom";
 import "./App.css";
-import Suppliers from "./pages/Suppliers";
-import SupplyPlace from "./pages/SupplyPlace";
+import Suppliers from "./suppliers/pages/Suppliers";
+import SupplyPlace from "./supplyplace/pages/SupplyPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import { AuthContext } from "./shared/context/auth-context";
 import { SearchContext } from "./shared/context/search-context";
