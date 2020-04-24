@@ -21,7 +21,7 @@ const NavLinks = props => {
       )}
       <li>
         <NavLink to="/" exact>
-          ALL SUPPLIERS
+          SUPPLIERS
         </NavLink>
       </li>
 

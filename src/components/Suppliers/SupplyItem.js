@@ -15,7 +15,8 @@ const SupplyItem = props => {
           </div>
           <div className="user-item__info">
             <h2>{props.name}</h2>
-            <h3>{props.industry}</h3>
+            <h3>{props.address}</h3>
+            <p>Open now</p>
           </div>
         </Link>
       </Card>
