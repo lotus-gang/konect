@@ -4,11 +4,10 @@ import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
 import Map from "../../shared/components/UIElements/Map";
-import ProductList from "./ProductList";
 
-import "./PlaceItem.css";
+import "./ProductItem.css";
 
-const PlaceItem = props => {
+const ProductItem = props => {
   const [showMap, setShowMap] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
@@ -70,22 +69,16 @@ const PlaceItem = props => {
             <img src={props.image} alt={props.title} />
           </div>
           <div className="place-item__info">
-            <h2>{props.title}</h2>
+            <h2>{props.name}</h2>
             <h3>{props.address}</h3>
             <p>{props.description}</p>
           </div>
           <div className="place-item__actions">
-            <Button inverse onClick={openMapHandler}>
-              VIEW ON MAP
-            </Button>
-
             {
               <Button danger onClick={showDeleteWarningHandler}>
                 DELETE
               </Button>
             }
-            <h3 center>Products</h3>
-            <ProductList sid={props.id} products={props.products} />
           </div>
         </Card>
       </li>
@@ -93,4 +86,4 @@ const PlaceItem = props => {
   );
 };
 
-export default PlaceItem;
+export default ProductItem;

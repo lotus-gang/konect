@@ -6,7 +6,7 @@ import SupplyList from "../components/Suppliers/SupplyList";
 const Suppliers = () => {
   const SUPPLIERS = [
     {
-      id: "p1",
+      id: "s1",
       name: "Giang Garment Factory",
       imageUrl:
         "https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg",
@@ -20,7 +20,7 @@ const Suppliers = () => {
       }
     },
     {
-      id: "p2",
+      id: "s2",
       name: "DBrandt Oilfield Services",
       imageUrl:
         "https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg",
