@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import SupplyList from "../components/SupplyList";
+import SupplyList from "../components/Suppliers/SupplyList";
 
 const Suppliers = () => {
   const SUPPLIERS = [

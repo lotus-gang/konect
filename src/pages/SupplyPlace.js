@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import PlaceList from "../components/PlaceList";
+import PlaceList from "../components/SupplyPlace/PlaceList";
 
 const SupplyPlace = props => {
   const supplyId = useParams().supplyId;
