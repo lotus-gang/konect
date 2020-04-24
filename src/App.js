@@ -13,6 +13,7 @@ import NewSupply from "./pages/NewSupply";
 import Auth from "./auth/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
 import NavBar from "./components/NavBar";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -64,7 +65,8 @@ function App() {
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
       <Router>
-        <NavBar />  
+        <NavBar />
+        <SearchBar />
         <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
