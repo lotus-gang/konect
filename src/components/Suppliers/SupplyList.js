@@ -23,7 +23,7 @@ const SupplyList = props => {
         <SupplyItem
           key={suppliers.id}
           id={suppliers.id}
-          industry={suppliers.industry}
+          address={suppliers.address}
           name={suppliers.name}
           image={suppliers.imageUrl}
         />

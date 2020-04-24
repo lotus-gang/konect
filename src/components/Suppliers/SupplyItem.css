@@ -11,13 +11,21 @@
   height: 100%;
   text-decoration: none;
   padding: 1rem;
-  color: white;
-  background: #292929;
+  color: #8a8a8f;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  /* identical to box height, or 118% */
+
+  letter-spacing: 0.07px;
+  background: white;
 }
 
 .user-item a:hover,
 .user-item a:active {
-  background: #ffd900;
+  background: #54d3c2;
 }
 
 .user-item__content {
@@ -27,23 +35,40 @@
 .user-item__image {
   width: 4rem;
   height: 4rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
+  /* padding-left: 1rem; */
 }
 
 .user-item__info h2 {
-  font-size: 1.5rem;
-  margin: 0 0 0.5rem 0;
-  font-weight: normal;
-  color: #ffd900;
+  margin: 0 2rem -1rem 0rem;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  letter-spacing: -0.24px;
+  color: #252529;
 }
 
 .user-item:hover h2,
 .user-item:active h2,
 .user-item:hover h3,
-.user-item:active h3 {
-  color: #292929;
+.user-item:active h3,
+.user-item:hover p,
+.user-item:active p {
+  color: white;
 }
 
 .user-item__info h3 {
-  margin: 0;
+  margin-right: 2rem;
+}
+.user-item__info p {
+  color: #54d3c2;
+  text-align: right;
+  margin-right: 2rem;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
 }

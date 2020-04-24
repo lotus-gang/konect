@@ -24,7 +24,7 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  background: #f8df00;
+  background: white;
   border-color: #292929;
   color: #292929;
 }
@@ -35,7 +35,7 @@
   color: #292929;
   background: transparent;
   padding: 0.5rem;
-  font: inherit;
+  font: Roboto Slab;
 }
 
 .nav-links button:focus {
@@ -67,10 +67,10 @@
     color: white;
     background: transparent;
   }
-  
+
   .nav-links button:hover,
   .nav-links button:active {
-    background: #f8df00;
+    background: #54d3c2;
     color: #292929;
   }
 }

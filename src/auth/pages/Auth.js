@@ -62,8 +62,8 @@ const Auth = () => {
 
   return (
     <Card className="authentication">
-      <h2>Login Required</h2>
-      <hr />
+      {isLoginMode ? <h2>Log In</h2> : <h2>Sign Up</h2>}
+
       <form onSubmit={authSubmitHandler}>
         {!isLoginMode && (
           <Input
@@ -74,6 +74,7 @@ const Auth = () => {
             validators={[VALIDATOR_REQUIRE()]}
             errorText="Please enter a name."
             onInput={inputHandler}
+            placeholder="Your Name"
           />
         )}
         <Input
@@ -84,6 +85,7 @@ const Auth = () => {
           validators={[VALIDATOR_EMAIL()]}
           errorText="Please enter a valid email address."
           onInput={inputHandler}
+          placeholder="Your Email"
         />
         <Input
           element="input"
@@ -93,14 +95,33 @@ const Auth = () => {
           validators={[VALIDATOR_MINLENGTH(5)]}
           errorText="Please enter a valid password, at least 5 characters."
           onInput={inputHandler}
+          placeholder="Password"
         />
-        <Button type="submit" disabled={!formState.isValid}>
-          {isLoginMode ? "LOGIN" : "SIGNUP"}
-        </Button>
+        {!isLoginMode ? (
+          <p className="p">
+            By signing up, you agreed with our Terms of Services and Privacy
+            Policy.
+          </p>
+        ) : (
+          <p className="forgot">Forgot your password?</p>
+        )}
+        <div className="center2">
+          <Button type="submit" disabled={!formState.isValid}>
+            {isLoginMode
+              ? "\xa0\xa0\xa0\xa0\xa0\xa0" +
+                "LOGIN" +
+                "\xa0\xa0\xa0\xa0\xa0\xa0"
+              : "\xa0\xa0\xa0\xa0\xa0\xa0" +
+                "SIGNUP" +
+                "\xa0\xa0\xa0\xa0\xa0\xa0"}
+          </Button>
+        </div>
       </form>
-      <Button inverse onClick={switchModeHandler}>
-        SWITCH TO {isLoginMode ? "SIGNUP" : "LOGIN"}
-      </Button>
+      <div className="center">
+        <Button inverse onClick={switchModeHandler}>
+          SWITCH TO {isLoginMode ? "SIGNUP" : "LOGIN"}
+        </Button>
+      </div>
     </Card>
   );
 };
