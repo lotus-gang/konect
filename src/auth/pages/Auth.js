@@ -10,6 +10,7 @@ const Auth = () => {
     <React.Fragment>
       <Card>
         <h2>Login Required</h2>
+        <h2>SignUp Required</h2>
         <hr />
         <Input></Input>
       </Card>
