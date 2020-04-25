@@ -58,7 +58,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.user-item__info span {
+.user-item__info span:available {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -69,4 +69,38 @@
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
+}
+.av {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #54d3c2;
+  text-align: right;
+  margin-right: 2rem;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+}
+.unav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #ff0f0f;
+  text-align: right;
+  margin-right: 2rem;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+}
+.addressz {
+  list-style: none;
+  width: 100%;
+  /* line-height: normal; */
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-top: -2rem;
+  margin-left: -4rem;
 }

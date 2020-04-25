@@ -3,7 +3,6 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./SupplyItem.css";
 
-
 const SupplyItem = props => {
   return (
     <div className="user-item">
@@ -14,15 +13,19 @@ const SupplyItem = props => {
             <img src={props.image} alt={props.name} />
           </Col>
           <Col xs={7} className="user-item__info no-padding">
-<<<<<<< HEAD
             <h2 className="text-title">{props.name}</h2>
-            <h3 className="text-body">{props.address}</h3>
-=======
-            <h2>{props.name}</h2>
-            <h3>{props.address}</h3>
-
->>>>>>> origin/styleDetails
-            <span>Open now</span>
+            <ul className="addressz">
+              <li>
+                <h3 className="text-body">{props.address}</h3>
+              </li>
+              <li>
+                {props.available ? (
+                  <p className="av">Open now</p>
+                ) : (
+                  <p className="unav">Closed</p>
+                )}
+              </li>
+            </ul>
           </Col>
         </Row>
 

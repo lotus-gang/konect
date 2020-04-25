@@ -3,17 +3,16 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Switch,
+  Switch
 } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import Suppliers from "./pages/Suppliers";
 import SupplyPlace from "./pages/SupplyPlace";
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import NewSupply from "./pages/NewSupply";
 import Auth from "./auth/pages/Auth";
-import { AuthContext } from "./shared/context/auth-context";
+import { AuthContext } from "./store/context/auth-context";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
 import BottomNav from "./components/BottomNav";
