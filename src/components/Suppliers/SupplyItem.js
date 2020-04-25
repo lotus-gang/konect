@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./SupplyItem.css";
 import { Container, Row, Col } from "react-bootstrap";
 
-const SupplyItem = (props) => {
+const SupplyItem = props => {
   return (
     <div className="user-item">
       <Link to={`/${props.id}`}>
@@ -16,6 +16,7 @@ const SupplyItem = (props) => {
           <Col xs={7} className="user-item__info no-padding">
             <h2>{props.name}</h2>
             <h3>{props.address}</h3>
+
             <span>Open now</span>
           </Col>
         </Row>
