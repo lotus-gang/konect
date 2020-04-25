@@ -54,10 +54,9 @@ function App() {
         <Route path="/:supplyId/products" exact>
           <SupplyPlace />
         </Route>
-        <Route path="/auth">
+        <Route path="/auth" exact>
           <Auth />
         </Route>
-
         <Redirect to="/auth" />
       </Switch>
     );
