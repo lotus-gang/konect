@@ -10,15 +10,15 @@ const SupplyList = props => {
   if (props.items.length === 0) {
     return (
       <div className="center">
-        <Card>
+        <div>
           <h2>No suppliers found.</h2>
-        </Card>
+        </div>
       </div>
     );
   }
 
   return (
-    <ul className="users-list">
+    <div className="users-list">
       {props.items.map(suppliers => (
         <SupplyItem
           key={suppliers.id}
@@ -28,7 +28,7 @@ const SupplyList = props => {
           image={suppliers.imageUrl}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 

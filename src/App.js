@@ -3,9 +3,11 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Switch
+  Switch,
 } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
 import Suppliers from "./pages/Suppliers";
 import SupplyPlace from "./pages/SupplyPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
