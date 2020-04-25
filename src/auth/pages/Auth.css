@@ -5,7 +5,7 @@
 
 .authentication {
   width: 100%;
-  max-width: 24rem;
+  max-width: 40rem;
   margin: 7rem auto;
   margin-top: -1rem;
   margin-bottom: -3rem;
@@ -27,6 +27,7 @@
   left: 6.91%;
   right: 6.91%;
   top: calc(50% - 36px / 2 + 237px);
+  /* margin-bottom: 4rem; */
 
   font-family: Roboto;
   font-style: normal;

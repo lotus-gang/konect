@@ -150,12 +150,8 @@ const Auth = () => {
         <div className="center2">
           <Button type="submit" disabled={!formState.isValid}>
             {isLoginMode
-              ? "\xa0\xa0\xa0\xa0\xa0\xa0" +
-                "Log in" +
-                "\xa0\xa0\xa0\xa0\xa0\xa0"
-              : "\xa0\xa0\xa0\xa0\xa0\xa0" +
-                "Sign up" +
-                "\xa0\xa0\xa0\xa0\xa0\xa0"}
+              ? "\xa0\xa0\xa0\xa0\xa0\xa0" + "Log in" + "\xa0\xa0\xa0\xa0\xa0"
+              : "\xa0\xa0\xa0\xa0\xa0\xa0" + "Sign up" + "\xa0\xa0\xa0\xa0\xa0"}
           </Button>
         </div>
       </form>
