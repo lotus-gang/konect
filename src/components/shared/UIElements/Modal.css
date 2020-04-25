@@ -6,13 +6,13 @@
   width: 80%;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 8px;
+  border-radius: 15px;
 }
 
 .modal__header {
   width: 97.5%;
   padding: 1rem 0.5rem;
-  background: #54d3c2;
+  /* background: #54d3c2; */
   color: white;
 }
 
@@ -43,7 +43,10 @@
 .modal h2 {
   font-style: Roboto Slab;
   font-size: 20px;
+  color: black;
   margin: auto;
+  margin-top: 1rem;
+  margin-bottom: -2rem;
   padding: 1rem;
 }
 .modal-enter {
