@@ -3,6 +3,8 @@ import { Container, FormControl } from "react-bootstrap";
 import "../../styles/components/SearchBar/index.css";
 import axios from "axios";
 
+export const PROXYCORS = "https://cors-anywhere.herokuapp.com/";
+
 const NavBar = (props) => {
   const [value, setValue] = useState("");
 
@@ -11,8 +13,8 @@ const NavBar = (props) => {
   };
   const search = (e) => {
     axios
-      .get(`https://coronabrainapi.herokuapp.com/search/${e.target.value}`)
-      .then((data) => console.log(data))
+      .get(PROXYCORS + `https://coronabrainapi.herokuapp.com/search/${value}`)
+      .then((res) => console.log(res.data))
       .catch(console.error);
   };
 
