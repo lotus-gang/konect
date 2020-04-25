@@ -16,6 +16,7 @@ import Auth from "./auth/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -70,6 +71,7 @@ function App() {
         <NavBar />
         <SearchBar />
         <main>{routes}</main>
+        <BottomNav />
       </Router>
     </AuthContext.Provider>
   );

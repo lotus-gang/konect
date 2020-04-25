@@ -6,9 +6,6 @@
 }
 
 .user-item a {
-  display: grid;
-  grid-template-columns: 33% 66%;
-  column-gap: 10px;
   text-decoration: none;
   color: #8a8a8f;
   font-size: 11px;
@@ -35,6 +32,7 @@
 
 .user-item__info {
   /* width: 60%; */
+  padding-left: 1.2rem;
   position: relative;
 }
 
@@ -54,7 +52,7 @@
 }
 
 .user-item__info h3 {
-  font-size: 1.0rem;
+  font-size: 1rem;
   margin-right: 2rem;
   white-space: nowrap;
   overflow: hidden;
