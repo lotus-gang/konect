@@ -1,10 +1,8 @@
 import React from "react";
-
 import SupplyItem from "./SupplyItem";
-import Card from "../../shared/components/UIElements/Card";
-import Search from "./Search";
-
 import "./SupplyList.css";
+
+
 
 const SupplyList = props => {
   if (props.items.length === 0) {

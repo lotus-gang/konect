@@ -1,10 +1,9 @@
-import React, { useReducer, useEffect } from "react";
-
 // import getCoordsForAddress from "../UIElements/location";
 import axios from "axios";
-import Map from "../UIElements/Map";
-import { validate } from "../../util/validators";
+import React, { useEffect, useReducer } from "react";
+import { validate } from "../../../util/validators";
 import "./Input.css";
+
 
 const API_KEY = "AIzaSyDMpmORBdsUlsZpKTr-REU-8Hqw7qh9t78";
 

@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
-
-import Card from "../../shared/components/UIElements/Card";
+import React, { useState } from "react";
 import Button from "../../shared/components/FormElements/Button";
-import Modal from "../../shared/components/UIElements/Modal";
+import Card from "../../shared/components/UIElements/Card";
 import Map from "../../shared/components/UIElements/Map";
-
+import Modal from "../../shared/components/UIElements/Modal";
 import "./ProductItem.css";
+
+
 
 const ProductItem = props => {
   const [showMap, setShowMap] = useState(false);

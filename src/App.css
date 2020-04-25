@@ -5,6 +5,7 @@ html {
 }
 body {
   font-family: "Roboto Slab", serif;
+  font-weight: 400;
 }
 
 .no-padding {
@@ -20,3 +21,5 @@ body {
   font-size: 1.3rem;
   font-family: "Roboto", sans-serif;
 }
+
+

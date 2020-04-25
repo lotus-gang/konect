@@ -1,8 +1,8 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import "./SupplyItem.css";
-import { Container, Row, Col } from "react-bootstrap";
+
 
 const SupplyItem = (props) => {
   return (
@@ -14,8 +14,8 @@ const SupplyItem = (props) => {
             <img src={props.image} alt={props.name} />
           </Col>
           <Col xs={7} className="user-item__info no-padding">
-            <h2>{props.name}</h2>
-            <h3>{props.address}</h3>
+            <h2 className="text-title">{props.name}</h2>
+            <h3 className="text-body">{props.address}</h3>
             <span>Open now</span>
           </Col>
         </Row>

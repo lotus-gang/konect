@@ -1,15 +1,15 @@
-import React, { useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
-import "./index.css";
+import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../store/context/auth-context";
 import "../../styles/components/NavBar/index.css";
-import { AuthContext } from "../../shared/context/auth-context";
+import "./index.css";
 
 const BottomNav = (props) => {
-  const auth = useContext(AuthContext);
+  const auth = useContext(AuthContext); 
   return (
     <Container className="bottom-nav">
-      <NavLink to={`/${auth.userId}`} className="bottom-nav-item explore">
+      <NavLink to={`/`} className="bottom-nav-item explore">
         <i class="bottom-nav-icon fas fa-search"></i>
         <span className="text-body">Explore</span>
       </NavLink>
