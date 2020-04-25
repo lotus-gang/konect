@@ -1,8 +1,9 @@
 /* Primary color: #54D3C2 */
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 body {
   font-family: "Roboto Slab", serif;
 }
+/* Customize Bootstrap */
