@@ -48,7 +48,7 @@
 .user-item:active h3,
 .user-item:hover p,
 .user-item:active p {
-  color: white;
+  color: black;
 }
 
 .user-item__info h3 {
