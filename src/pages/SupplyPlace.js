@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import PlaceList from "../components/SupplyPlace/PlaceList";
 
-const SupplyPlace = props => {
+const SupplyProduct = props => {
   const supplyId = useParams().supplyId;
   const SUPPLIERS = [
     {
@@ -15,8 +15,7 @@ const SupplyPlace = props => {
         "https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg",
       address: "8 Sixth Lok Yang Rd, Singapore 628106",
       mobile: 68621169,
-      open_hour: 9,
-      close_hour: 18,
+      available: false,
       location: {
         lat: 1.3265611,
         lng: 103.6823505
@@ -31,8 +30,7 @@ const SupplyPlace = props => {
         "https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg",
       address: "Two",
       mobile: 68621169,
-      open_hour: 9,
-      close_hour: 18,
+      available: true,
       location: {
         lat: 1.3265611,
         lng: 103.6823505
@@ -44,34 +42,28 @@ const SupplyPlace = props => {
       pid: "p1",
       sid: "s1",
       name: "Banana",
-      description: "Best in the country",
-      imageUrl:
-        "https://article.images.consumerreports.org/f_auto/prod/content/dam/CRO%20Images%202018/Health/April/CR-Health-Inlinehero-bananas-good-for-you-0418"
+      available: true
     },
     {
       pid: "p2",
       sid: "s2",
       name: "Apple",
-      description: "Best in the country",
-      imageUrl:
-        "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/health-benefits-of-apples-1296x728-feature.jpg?w=1155&h=1528"
+      available: true
     },
     {
       pid: "p3",
       sid: "s2",
       name: "Pear",
-      description: "Best in the country",
-      imageUrl:
-        "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/285/285430/two-pears-on-a-table.jpg?w=1155&h=1734"
+      available: false
     }
   ];
   const loadedSupplier = SUPPLIERS.find(supplier => supplier.id === supplyId);
   const loadedProduct = PRODUCTS.filter(product => product.sid === supplyId);
   return (
     <React.Fragment>
-      <PlaceList items={loadedSupplier} products={loadedProduct} />
+      <PlaceList supplier={loadedSupplier} products={loadedProduct} />
     </React.Fragment>
   );
 };
 
-export default SupplyPlace;
+export default SupplyProduct;

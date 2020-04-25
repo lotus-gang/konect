@@ -24,6 +24,7 @@ const SupplyList = props => {
           address={suppliers.address}
           name={suppliers.name}
           image={suppliers.imageUrl}
+          available={suppliers.available}
         />
       ))}
     </div>

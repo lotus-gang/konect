@@ -22,9 +22,8 @@ const ProductList = props => {
       {props.products.map(product => (
         <ProductItem
           id={product.id}
-          image={product.imageUrl}
           name={product.name}
-          description={product.description}
+          available={product.available}
           creatorId={product.creator}
         />
       ))}
