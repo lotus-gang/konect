@@ -34,7 +34,18 @@
     width: 40rem;
   }
 }
-
+.modal p {
+  font-style: Roboto;
+  font-size: 15px;
+  margin: auto;
+  padding: 1.2rem;
+}
+.modal h2 {
+  font-style: Roboto Slab;
+  font-size: 20px;
+  margin: auto;
+  padding: 1rem;
+}
 .modal-enter {
   transform: translateY(-10rem);
   opacity: 0;
