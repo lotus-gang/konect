@@ -1,0 +1,8 @@
+.bottom-nav {
+  /* overflow: hidden; */
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.0609156);
+}

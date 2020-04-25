@@ -1,23 +1,14 @@
 .user-item {
-  margin: 1rem;
-  width: calc(45% - 2rem);
-  min-width: 17.5rem;
+  padding-top: 2.4rem;
+  padding-bottom: 0.44rem;
+  /* width: calc(45% - 2rem); */
+  /* min-width: 17.5rem; */
 }
 
 .user-item a {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
   text-decoration: none;
-  padding: 1rem;
   color: #8a8a8f;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 11px;
-  line-height: 13px;
-  /* identical to box height, or 118% */
 
   letter-spacing: 0.07px;
   background: white;
@@ -28,25 +19,25 @@
   background: #54d3c2;
 }
 
-.user-item__content {
-  padding: 0;
+.user-item__image {
+  /* width: 4rem;
+  height: 4rem; */
+  /* width: 30%; */
+  /* margin-right: 2rem; */
 }
 
-.user-item__image {
-  width: 4rem;
-  height: 4rem;
-  margin-right: 2rem;
-  /* padding-left: 1rem; */
+.user-item__image img {
+  width: 100%;
+}
+
+.user-item__info {
+  /* width: 60%; */
+  padding-left: 1.2rem;
+  position: relative;
 }
 
 .user-item__info h2 {
-  margin: 0 2rem -1rem 0rem;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
+  font-size: 1.4rem;
   letter-spacing: -0.24px;
   color: #252529;
 }
@@ -61,9 +52,16 @@
 }
 
 .user-item__info h3 {
+  font-size: 1rem;
   margin-right: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.user-item__info p {
+.user-item__info span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   color: #54d3c2;
   text-align: right;
   margin-right: 2rem;
