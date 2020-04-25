@@ -6,12 +6,11 @@ import Button from "../../components/shared/FormElements/Button";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
-  VALIDATOR_REQUIRE,
+  VALIDATOR_REQUIRE
 } from "../../util/validators";
 import { useForm } from "../../store/hooks/form-hook";
 import { AuthContext } from "../../store/context/auth-context";
 import Map from "../../components/shared/UIElements/Map";
-import getCoordsForAddress from "../../components/shared/UIElements/location";
 import "./Auth.css";
 
 const Auth = () => {
@@ -22,12 +21,12 @@ const Auth = () => {
     {
       email: {
         value: "",
-        isValid: false,
+        isValid: false
       },
       password: {
         value: "",
-        isValid: false,
-      },
+        isValid: false
+      }
     },
     false
   );
@@ -39,7 +38,7 @@ const Auth = () => {
           ...formState.inputs,
           name: undefined,
           company: undefined,
-          address: undefined,
+          address: undefined
         },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
@@ -49,16 +48,16 @@ const Auth = () => {
           ...formState.inputs,
           name: {
             value: "",
-            isValid: false,
-          },
+            isValid: false
+          }
         },
         false
       );
     }
-    setIsLoginMode((prevMode) => !prevMode);
+    setIsLoginMode(prevMode => !prevMode);
   };
 
-  const authSubmitHandler = (event) => {
+  const authSubmitHandler = event => {
     event.preventDefault();
     console.log(formState.inputs);
     auth.login();

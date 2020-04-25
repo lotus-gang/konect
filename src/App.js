@@ -36,7 +36,7 @@ function App() {
         <Route path="/" exact>
           <Suppliers />
         </Route>
-        <Route path="/:supplyId" exact>
+        <Route path="/:supplyId/products" exact>
           <SupplyPlace />
         </Route>
         <Route path="/supply/new" exact>
@@ -51,12 +51,13 @@ function App() {
         <Route path="/" exact>
           <Suppliers />
         </Route>
+        <Route path="/:supplyId/products" exact>
+          <SupplyPlace />
+        </Route>
         <Route path="/auth">
           <Auth />
         </Route>
-        <Route path="/:supplyId" exact>
-          <SupplyPlace />
-        </Route>
+
         <Redirect to="/auth" />
       </Switch>
     );

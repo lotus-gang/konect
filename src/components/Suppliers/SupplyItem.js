@@ -6,7 +6,7 @@ import "./SupplyItem.css";
 const SupplyItem = props => {
   return (
     <div className="user-item">
-      <Link to={`/${props.id}`}>
+      <Link to={`/${props.id}/products`}>
         {/* <Container> */}
         <Row>
           <Col xs={5} className="user-item__image no-padding">
