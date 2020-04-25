@@ -3,6 +3,7 @@ import React from "react";
 import Card from "../../shared/components/UIElements/Card";
 import PlaceItem from "./PlaceItem";
 import Button from "../../shared/components/FormElements/Button";
+import ProductList from "./ProductList";
 import "./PlaceList.css";
 
 const PlaceList = props => {
@@ -24,7 +25,7 @@ const PlaceList = props => {
         key={items.id}
         id={items.id}
         image={items.imageUrl}
-        name={items.name}
+        title={items.title}
         description={items.description}
         address={items.address}
         creatorId={items.creator}

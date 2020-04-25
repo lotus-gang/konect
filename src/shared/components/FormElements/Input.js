@@ -1,29 +1,7 @@
 import React, { useReducer, useEffect } from "react";
 
-// import getCoordsForAddress from "../UIElements/location";
-import axios from "axios";
-import Map from "../UIElements/Map";
 import { validate } from "../../util/validators";
 import "./Input.css";
-
-const API_KEY = "AIzaSyDMpmORBdsUlsZpKTr-REU-8Hqw7qh9t78";
-
-const getCoordsForAddress = async address => {
-  const response = await axios
-    .get(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-        address
-      )}&key=${API_KEY}`
-    )
-    .catch(console.error);
-  const data = response.data;
-  const coordinate = data.results[0].geometry.location;
-  return console.log(coordinate);
-  // .then(response => {
-  //   return response.data.results[0].geometry.location;
-  // })
-  // .catch(console.error);
-};
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -50,6 +28,7 @@ const Input = props => {
     isTouched: false,
     isValid: props.initialValid || false
   });
+
   const { id, onInput } = props;
   const { value, isValid } = inputState;
 
@@ -61,8 +40,7 @@ const Input = props => {
     dispatch({
       type: "CHANGE",
       val: event.target.value,
-      validators: props.validators,
-      id: props.id
+      validators: props.validators
     });
   };
 
