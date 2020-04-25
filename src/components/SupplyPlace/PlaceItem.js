@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
 
-import Card from "../../shared/components/UIElements/Card";
-import Button from "../../shared/components/FormElements/Button";
-import Modal from "../../shared/components/UIElements/Modal";
-import Map from "../../shared/components/UIElements/Map";
+import Card from "../../components/shared/UIElements/Card";
+import Button from "../../components/shared/FormElements/Button";
+import Modal from "../../components/shared/UIElements/Modal";
+import Map from "../../components/shared/UIElements/Map";
 import ProductList from "./ProductList";
 
 import "./PlaceItem.css";
 
-const PlaceItem = props => {
+const PlaceItem = (props) => {
   const [showNumber, setShowNumber] = useState(false);
 
   const cancelNumber = () => {

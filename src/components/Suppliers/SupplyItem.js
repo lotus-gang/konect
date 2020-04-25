@@ -14,14 +14,8 @@ const SupplyItem = props => {
             <img src={props.image} alt={props.name} />
           </Col>
           <Col xs={7} className="user-item__info no-padding">
-<<<<<<< HEAD
             <h2 className="text-title">{props.name}</h2>
             <h3 className="text-body">{props.address}</h3>
-=======
-            <h2>{props.name}</h2>
-            <h3>{props.address}</h3>
-
->>>>>>> origin/styleDetails
             <span>Open now</span>
           </Col>
         </Row>
