@@ -1,9 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import axios from "axios";
 
 import SupplyList from "../components/Suppliers/SupplyList";
 
 const Suppliers = () => {
+  useEffect(() => {
+    axios
+      .get("https://coronabrainapi.herokuapp.com/companies")
+      .then(response => {
+        console.log(response);
+      })
+      .catch(console.error);
+  });
   const SUPPLIERS = [
     {
       id: "s1",
