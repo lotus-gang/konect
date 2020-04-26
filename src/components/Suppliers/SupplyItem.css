@@ -1,8 +1,9 @@
 .user-item {
-  padding-top: 2.4rem;
+  margin-top: 2.4rem;
   padding-bottom: 0.44rem;
-  /* width: calc(45% - 2rem); */
-  /* min-width: 17.5rem; */
+  box-shadow: 0px -2px 14px rgba(0, 0, 0, 0.06);
+  border-radius: 1.5rem;
+  background-color: #fff;
 }
 
 .user-item a {
@@ -28,6 +29,8 @@
 
 .user-item__image img {
   width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .user-item__info {
