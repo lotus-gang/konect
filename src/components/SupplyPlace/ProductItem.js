@@ -86,13 +86,17 @@ const ProductItem = props => {
               <Button inverse onClick={cancelDeleteHandler}>
                 Cancel
               </Button>
-              <Button onClick={changeHandler}>Change to unavailable</Button>
+              <Button onClick={changeHandler}>
+                {props.available ? "Unavailable" : "Available"}
+              </Button>
               <Button danger onClick={confirmDeleteHandler}>
                 Delete
               </Button>
             </React.Fragment>
           ) : (
-            <Button onClick={changeHandler}>Change to unavailable</Button>
+            <Button onClick={changeHandler}>
+              {props.available ? "Unavailable" : "Available"}
+            </Button>
           )
         }
       >
