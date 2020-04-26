@@ -1,8 +1,8 @@
 import React from "react";
 
-import Card from "../../shared/components/UIElements/Card";
+import Card from "../../components/shared/UIElements/Card";
 import ProductItem from "./ProductItem";
-import Button from "../../shared/components/FormElements/Button";
+import Button from "../../components/shared/FormElements/Button";
 import "./ProductList.css";
 
 const ProductList = props => {
@@ -22,10 +22,9 @@ const ProductList = props => {
       {props.products.map(product => (
         <ProductItem
           id={product.id}
-          image={product.imageUrl}
-          name={product.name}
-          description={product.description}
-          creatorId={product.creator}
+          name={product.product_name}
+          available={product.product_available}
+          description={product.product_description}
         />
       ))}
     </ul>

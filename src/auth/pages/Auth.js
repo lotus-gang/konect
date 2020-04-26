@@ -1,17 +1,16 @@
 import React, { useState, useContext } from "react";
 
-import Card from "../../shared/components/UIElements/Card";
-import Input from "../../shared/components/FormElements/Input";
-import Button from "../../shared/components/FormElements/Button";
+import Card from "../../components/shared/UIElements/Card";
+import Input from "../../components/shared/FormElements/Input";
+import Button from "../../components/shared/FormElements/Button";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE
-} from "../../shared/util/validators";
-import { useForm } from "../../shared/hooks/form-hook";
-import { AuthContext } from "../../shared/context/auth-context";
-import Map from "../../shared/components/UIElements/Map";
-import getCoordsForAddress from "../../shared/components/UIElements/location";
+} from "../../util/validators";
+import { useForm } from "../../store/hooks/form-hook";
+import { AuthContext } from "../../store/context/auth-context";
+import Map from "../../components/shared/UIElements/Map";
 import "./Auth.css";
 
 const Auth = () => {
@@ -150,12 +149,8 @@ const Auth = () => {
         <div className="center2">
           <Button type="submit" disabled={!formState.isValid}>
             {isLoginMode
-              ? "\xa0\xa0\xa0\xa0\xa0\xa0" +
-                "Log in" +
-                "\xa0\xa0\xa0\xa0\xa0\xa0"
-              : "\xa0\xa0\xa0\xa0\xa0\xa0" +
-                "Sign up" +
-                "\xa0\xa0\xa0\xa0\xa0\xa0"}
+              ? "\xa0\xa0\xa0\xa0\xa0\xa0" + "Log in" + "\xa0\xa0\xa0\xa0\xa0"
+              : "\xa0\xa0\xa0\xa0\xa0\xa0" + "Sign up" + "\xa0\xa0\xa0\xa0\xa0"}
           </Button>
         </div>
       </form>

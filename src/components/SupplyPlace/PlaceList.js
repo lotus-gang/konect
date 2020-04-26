@@ -1,13 +1,13 @@
 import React from "react";
 
-import Card from "../../shared/components/UIElements/Card";
+import Card from "../../components/shared/UIElements/Card";
 import PlaceItem from "./PlaceItem";
-import Button from "../../shared/components/FormElements/Button";
+import Button from "../../components/shared/FormElements/Button";
 import "./PlaceList.css";
 
 const PlaceList = props => {
-  const { items } = props;
-  if (!items) {
+  const { supplier } = props;
+  if (!supplier) {
     return (
       <div className="place-list center">
         <Card>
@@ -21,14 +21,13 @@ const PlaceList = props => {
   return (
     <div className="place-list">
       <PlaceItem
-        key={items.id}
-        id={items.id}
-        image={items.imageUrl}
-        name={items.name}
-        description={items.description}
-        address={items.address}
-        creatorId={items.creator}
-        coordinates={items.location}
+        id={supplier.id}
+        available={supplier.company_open}
+        image="https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg"
+        name={supplier.company_name}
+        description={supplier.company_desc}
+        address={supplier.company_address}
+        coordinates={{ lat: supplier.company_lat, lng: supplier.company_long }}
         products={props.products}
       />
     </div>

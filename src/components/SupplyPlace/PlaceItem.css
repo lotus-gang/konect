@@ -1,9 +1,11 @@
 .place-item {
-  margin: 1rem 0;
+  margin: 2.4rem 0;
 }
 
 .place-item__content {
   padding: 0;
+  display: inline-block;
+  /* margin: 0 -4rem 0rem -4rem; */
 }
 
 .place-item__info {
@@ -23,8 +25,34 @@
   object-fit: cover;
 }
 
-.place-item__info h2,
-.place-item__info h3,
+.place-item__info h2 {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height, or 121% */
+  text-align: left;
+  letter-spacing: 0.36px;
+  margin-top: 0rem;
+
+  color: #252529;
+}
+.place-item__info h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+
+  /* identical to box height, or 118% */
+  text-align: left;
+  /* margin-bottom: rem; */
+  /* margin-top: -2rem; */
+  letter-spacing: 0.07px;
+  margin-left: 0.3rem;
+
+  color: #8a8a8f;
+}
 .place-item__info p {
   margin: 0 0 0.5rem 0;
 }
@@ -32,7 +60,7 @@
 .place-item__actions {
   padding: 1rem;
   text-align: center;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #d8d8d8;
 }
 
 .place-item__modal-content {
@@ -49,12 +77,89 @@
 }
 
 .map-container {
-  height: 15rem;
-  width: 100%;
+  margin-left: -0.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  /* justify-content: center; */
+  width: 119%;
+  /* height: 150%; */
 }
 
 @media (min-width: 768px) {
   .place-item__image {
     height: 20rem;
-  } 
+  }
+}
+.details {
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: -0.24px;
+
+  color: #8a8a8f;
+}
+.description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 0.2rem;
+  /* or 133% */
+  text-align: left;
+  letter-spacing: -0.24px;
+
+  color: #252529;
+}
+.address {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-top: -2.5rem;
+}
+.maps {
+  margin-left: -0.4rem;
+  text-align: center;
+
+  /* justify-content: center; */
+  width: 119%;
+  /* height: 150%; */
+}
+.contact {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 8rem;
+}
+.phoneNumber {
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: -0.24px;
+
+  color: #8a8a8f;
+}
+.read {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: -0.24px;
+
+  color: #54d3c2;
 }

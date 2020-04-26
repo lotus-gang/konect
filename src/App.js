@@ -1,21 +1,26 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback, useReducer, useState } from "react";
 import {
   BrowserRouter as Router,
-  Route,
   Redirect,
+  Route,
   Switch,
 } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
-import Suppliers from "./pages/Suppliers";
-import SupplyPlace from "./pages/SupplyPlace";
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import NewSupply from "./pages/NewSupply";
 import Auth from "./auth/pages/Auth";
-import { AuthContext } from "./shared/context/auth-context";
+import BottomNav from "./components/BottomNav";
+import FilterBar from "./components/FilterBar";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
+import NewSupply from "./pages/NewSupply";
+import Suppliers from "./pages/Suppliers";
+import SupplyPlace from "./pages/SupplyPlace";
+import { AuthContext } from "./store/context/auth-context";
+import {
+  SearchContext,
+  searchStateInit,
+  searchReducer,
+} from "./store/context/search-context";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,7 +41,7 @@ function App() {
         <Route path="/" exact>
           <Suppliers />
         </Route>
-        <Route path="/:supplyId" exact>
+        <Route path="/:supplyId/products" exact>
           <SupplyPlace />
         </Route>
         <Route path="/supply/new" exact>
@@ -51,26 +56,35 @@ function App() {
         <Route path="/" exact>
           <Suppliers />
         </Route>
-        <Route path="/auth">
-          <Auth />
-        </Route>
-        <Route path="/:supplyId" exact>
+        <Route path="/:supplyId/products" exact>
           <SupplyPlace />
+        </Route>
+        <Route path="/auth" exact>
+          <Auth />
         </Route>
         <Redirect to="/auth" />
       </Switch>
     );
   }
 
+  const [state, dispatch] = useReducer(searchReducer, searchStateInit);
+
   return (
     <AuthContext.Provider
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
-      <Router>
-        <NavBar />
-        <SearchBar />
-        <main>{routes}</main>
-      </Router>
+      <SearchContext.Provider value={{ state, dispatch }}>
+        <Router>
+          <NavBar />
+          <SearchBar />
+
+          <div className="main-content">
+            <FilterBar />
+            {routes}
+          </div>
+          <BottomNav />
+        </Router>
+      </SearchContext.Provider>
     </AuthContext.Provider>
   );
 }

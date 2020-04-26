@@ -1,24 +1,34 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-import Avatar from "../../shared/components/UIElements/Avatar";
-import Card from "../../shared/components/UIElements/Card";
 import "./SupplyItem.css";
-import { Container, Row, Col } from "react-bootstrap";
 
-const SupplyItem = (props) => {
+const SupplyItem = props => {
   return (
     <div className="user-item">
-      <Link to={`/${props.id}`}>
+      <Link to={`/${props.id}/products`}>
         {/* <Container> */}
-        <div className="user-item__image">
-          <img src={props.image} alt={props.name} />
-        </div>
-        <div className="user-item__info">
-          <h2>{props.name}</h2>
-          <h3>{props.address}</h3>
-          <span>Open now</span>
-        </div>
+        <Row>
+          <Col xs={5} className="user-item__image no-padding">
+            <img src={props.image} alt={props.name} />
+          </Col>
+          <Col xs={7} className="user-item__info no-padding">
+            <h2 className="text-title">{props.name}</h2>
+            <ul className="addressz">
+              <li>
+                <h3 className="text-body">{props.address}</h3>
+              </li>
+              <li>
+                {props.available ? (
+                  <p className="av">Open now</p>
+                ) : (
+                  <p className="unav">Closed</p>
+                )}
+              </li>
+            </ul>
+          </Col>
+        </Row>
+
         {/* </Container> */}
       </Link>
     </div>
