@@ -1,18 +1,19 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useContext } from "react";
 import { Container, FormControl } from "react-bootstrap";
 import "../../styles/components/SearchBar/index.css";
 import axios from "axios";
 import {
   searchStateInit,
   searchReducer,
+  SearchContext,
 } from "../../store/context/search-context";
 
 export const PROXYCORS = "https://cors-anywhere.herokuapp.com/";
 
 const NavBar = (props) => {
-  const [state, dispatch] = useReducer(searchReducer, searchStateInit);
+  const searchContext = useContext(SearchContext);
+  const { dispatch } = searchContext;
   const [value, setValue] = useState("");
-
 
   const changeInput = (e) => {
     setValue(e.target.value);

@@ -2,12 +2,10 @@ import { createContext } from "react";
 import { useCallback, useReducer } from "react";
 import { updateObject } from "../../util/utility";
 
-export const SearchContext = createContext(null);
-
 export const searchStateInit = {
-  searchValue: "",
   data: [],
 };
+export const SearchContext = createContext(searchStateInit);
 
 export const searchReducer = (state, action) => {
   switch (action.type) {
@@ -15,7 +13,6 @@ export const searchReducer = (state, action) => {
       return updateObject(state, { searchValue: action.searchValue });
     case "SET_DATA":
       return updateObject(state, { data: action.data });
-
     default:
       return state;
   }

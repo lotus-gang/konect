@@ -11,7 +11,6 @@ import {
 const FilterBar = (props) => {
   const [state, dispatch] = useReducer(searchReducer, searchStateInit);
   const { data } = state;
-  console.log("data", data);
   return (
     <Container className="filter-bar text-body">
       <div className="total-suppliers">
