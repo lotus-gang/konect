@@ -1,0 +1,14 @@
+.filter-bar {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.filter {
+  font-size: 1.3rem;
+}
+
+.filter .fa-filter {
+    color: #54d3c2;
+}

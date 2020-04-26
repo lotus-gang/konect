@@ -1,21 +1,26 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback, useReducer, useState } from "react";
 import {
   BrowserRouter as Router,
-  Route,
   Redirect,
-  Switch
+  Route,
+  Switch,
 } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
-import Suppliers from "./pages/Suppliers";
-import SupplyPlace from "./pages/SupplyPlace";
-import NewSupply from "./pages/NewSupply";
 import Auth from "./auth/pages/Auth";
-import { AuthContext } from "./store/context/auth-context";
+import BottomNav from "./components/BottomNav";
+import FilterBar from "./components/FilterBar";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
-import BottomNav from "./components/BottomNav";
+import NewSupply from "./pages/NewSupply";
+import Suppliers from "./pages/Suppliers";
+import SupplyPlace from "./pages/SupplyPlace";
+import { AuthContext } from "./store/context/auth-context";
+import {
+  SearchContext,
+  searchStateInit,
+  searchReducer,
+} from "./store/context/search-context";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -62,16 +67,24 @@ function App() {
     );
   }
 
+  const [state, dispatch] = useReducer(searchReducer, searchStateInit);
+
   return (
     <AuthContext.Provider
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
-      <Router>
-        <NavBar />
-        <SearchBar />
-        <main>{routes}</main>
-        <BottomNav />
-      </Router>
+      <SearchContext.Provider value={{ state, dispatch }}>
+        <Router>
+          <NavBar />
+          <SearchBar />
+
+          <div className="main-content">
+            <FilterBar />
+            {routes}
+          </div>
+          <BottomNav />
+        </Router>
+      </SearchContext.Provider>
     </AuthContext.Provider>
   );
 }
