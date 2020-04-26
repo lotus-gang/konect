@@ -48,7 +48,7 @@ const PlaceItem = props => {
             <p className="details">Summary</p>
             <p className="description">{props.description}</p>
           </div>
-
+          <hr className="hr" />
           <div className="place-item__actions">
             <p className="details">Products</p>
             <ProductList sid={props.id} products={props.products} />

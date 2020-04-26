@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import Input from "../components/shared/FormElements/Input";
 import Card from "../components/shared/UIElements/Card";
@@ -6,6 +7,8 @@ import Button from "../components/shared/FormElements/Button";
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from "../util/validators";
 import { useForm } from "../store/hooks/form-hook";
 import "./PlaceForm.css";
+
+export const PROXYCORS = "https://cors-anywhere.herokuapp.com/";
 
 const NewPlace = () => {
   const [formState, inputHandler] = useForm(
@@ -24,7 +27,15 @@ const NewPlace = () => {
 
   const placeSubmitHandler = event => {
     event.preventDefault();
-    console.log(formState.inputs); // send this to the backend!
+    const post = {
+      product_name: formState.inputs.name.value,
+      product_description: formState.inputs.name.value,
+      product_available: true
+    };
+    axios
+      .post(PROXYCORS + "http://coronabrainapi.herokuapp.com/products/", post)
+      .then(response => console.log(response));
+    // console.log(formState.inputs.name.value); // send this to the backend!
   };
 
   return (
