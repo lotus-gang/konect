@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import ReadMoreReact from "read-more-react";
 
 import Card from "../../components/shared/UIElements/Card";
 import Button from "../../components/shared/FormElements/Button";
@@ -46,7 +47,12 @@ const PlaceItem = props => {
               </li>
             </ul>
             <p className="details">Summary</p>
-            <p className="description">{props.description}</p>
+            <div className="description">
+              <ReadMoreReact
+                text={props.description}
+                readMoreText={<a className="read">Read more</a>}
+              />
+            </div>
           </div>
 
           <div className="place-item__actions">

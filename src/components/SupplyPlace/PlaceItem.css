@@ -105,8 +105,9 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 20px;
+  padding-left: 0.2rem;
   /* or 133% */
   text-align: left;
   letter-spacing: -0.24px;
@@ -133,6 +134,7 @@
 .contact {
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 8rem;
 }
 .phoneNumber {
   text-align: center;
@@ -146,4 +148,16 @@
   letter-spacing: -0.24px;
 
   color: #8a8a8f;
+}
+.read {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: -0.24px;
+
+  color: #54d3c2;
 }
