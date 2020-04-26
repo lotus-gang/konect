@@ -1,20 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { Container, FormControl } from "react-bootstrap";
 import "../../styles/components/SearchBar/index.css";
 import axios from "axios";
+import {
+  searchStateInit,
+  searchReducer,
+} from "../../store/context/search-context";
 
 export const PROXYCORS = "https://cors-anywhere.herokuapp.com/";
 
 const NavBar = (props) => {
+  const [state, dispatch] = useReducer(searchReducer, searchStateInit);
   const [value, setValue] = useState("");
+
+  // console.log(state);
 
   const changeInput = (e) => {
     setValue(e.target.value);
   };
   const search = (e) => {
+    e.preventDefault();
     axios
       .get(PROXYCORS + `https://coronabrainapi.herokuapp.com/search/${value}`)
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        dispatch({
+          type: "SET_DATA",
+          data: res.data,
+        });
+        console.log(res.data);
+      })
       .catch(console.error);
   };
 
@@ -26,7 +40,7 @@ const NavBar = (props) => {
         onChange={changeInput}
       />
       <span className="search-icon" onClick={search}>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
       </span>
     </Container>
   );

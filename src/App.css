@@ -22,4 +22,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.main-content {
+  padding: 0 1.5rem 10rem;
+}
 
+.text-link {
+  color: inherit;
+  text-decoration: none;
+}
