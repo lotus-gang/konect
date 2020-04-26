@@ -5,7 +5,7 @@ import ProductItem from "./ProductItem";
 import Button from "../../components/shared/FormElements/Button";
 import "./ProductList.css";
 
-const ProductList = (props) => {
+const ProductList = props => {
   const { products } = props;
   if (!products) {
     return (
@@ -19,12 +19,13 @@ const ProductList = (props) => {
   }
   return (
     <ul className="product-list">
-      {props.products.map((product) => (
+      {props.products.map(product => (
         <ProductItem
           id={product.id}
           name={product.name}
           available={product.available}
           creatorId={product.creator}
+          description={product.description}
         />
       ))}
     </ul>
