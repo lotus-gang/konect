@@ -21,15 +21,13 @@ const PlaceList = props => {
   return (
     <div className="place-list">
       <PlaceItem
-        key={supplier.id}
         id={supplier.id}
-        available={supplier.available}
-        image={supplier.imageUrl}
-        name={supplier.name}
-        description={supplier.description}
-        address={supplier.address}
-        creatorId={supplier.creator}
-        coordinates={supplier.location}
+        available={supplier.company_open}
+        image="https://a.c-dn.net/b/4uot3B/headline_shutterstock_243762007.jpg"
+        name={supplier.company_name}
+        description={supplier.company_desc}
+        address={supplier.company_address}
+        coordinates={{ lat: supplier.company_lat, lng: supplier.company_long }}
         products={props.products}
       />
     </div>
