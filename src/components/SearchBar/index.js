@@ -13,7 +13,6 @@ const NavBar = (props) => {
   const [state, dispatch] = useReducer(searchReducer, searchStateInit);
   const [value, setValue] = useState("");
 
-  // console.log(state);
 
   const changeInput = (e) => {
     setValue(e.target.value);
@@ -27,7 +26,7 @@ const NavBar = (props) => {
           type: "SET_DATA",
           data: res.data,
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(console.error);
   };

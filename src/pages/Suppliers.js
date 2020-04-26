@@ -1,26 +1,29 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import SupplyList from "../components/Suppliers/SupplyList";
 import { PROXYCORS } from "../components/SearchBar";
 import {
   searchReducer,
-  searchStateInit
+  searchStateInit,
+  SearchContext,
 } from "../store/context/search-context";
 
 const Suppliers = () => {
+  const { state: stateSearch } = useContext(SearchContext);
   const [state, dispatch] = useReducer(searchReducer, searchStateInit);
+
   const { data } = state;
-  console.log(data);
+  console.log(state);
   useEffect(() => {
     axios
       .get(PROXYCORS + "https://coronabrainapi.herokuapp.com/companies")
-      .then(res => {
+      .then((res) => {
         // this.setState({})
 
         dispatch({
           type: "SET_DATA",
-          data: res.data
+          data: res.data,
         });
       })
       .catch(console.error);
