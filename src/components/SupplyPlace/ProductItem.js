@@ -12,6 +12,15 @@ const ProductItem = props => {
 
   const showDeleteWarningHandler = () => {
     setShowConfirmModal(true);
+    axios
+      .get(
+        PROXYCORS +
+          "https://coronabrainapi.herokuapp.com/products/" +
+          props.id +
+          "/"
+      )
+      .then(res => setBody(res.data));
+    console.log(body);
   };
   const cancelDeleteHandler = () => {
     setShowConfirmModal(false);
@@ -31,15 +40,6 @@ const ProductItem = props => {
 
   const changeHandler = () => {
     setShowConfirmModal(false);
-    axios
-      .get(
-        PROXYCORS +
-          "https://coronabrainapi.herokuapp.com/products/" +
-          props.id +
-          "/"
-      )
-      .then(res => setBody(res.data));
-    console.log(body);
     let data;
     if (body) {
       data = {
@@ -71,7 +71,6 @@ const ProductItem = props => {
         .then(res => console.log(res))
         .catch(console.error);
     }
-    alert("Please do it again!");
   };
 
   return (
