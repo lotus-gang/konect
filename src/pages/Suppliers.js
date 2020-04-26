@@ -5,7 +5,7 @@ import SupplyList from "../components/Suppliers/SupplyList";
 import { PROXYCORS } from "../components/SearchBar";
 import {
   searchReducer,
-  searchStateInit,
+  searchStateInit
 } from "../store/context/search-context";
 
 const Suppliers = () => {
@@ -15,12 +15,12 @@ const Suppliers = () => {
   useEffect(() => {
     axios
       .get(PROXYCORS + "https://coronabrainapi.herokuapp.com/companies")
-      .then((res) => {
+      .then(res => {
         // this.setState({})
 
         dispatch({
           type: "SET_DATA",
-          data: res.data,
+          data: res.data
         });
       })
       .catch(console.error);

@@ -2,11 +2,9 @@ import React, { useState } from "react";
 
 import Modal from "../../components/shared/UIElements/Modal";
 import Button from "../../components/shared/FormElements/Button";
-import { AuthContext } from "../../store/context/auth-context";
 import "./ProductItem.css";
 
 const ProductItem = props => {
-  const auth = useContext(AuthContext);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const showDeleteWarningHandler = () => {
     setShowConfirmModal(true);
