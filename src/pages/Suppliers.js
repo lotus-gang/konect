@@ -11,25 +11,20 @@ import {
 
 const Suppliers = () => {
   const searchContext = useContext(SearchContext);
-  const { state } = searchContext;
-  // const [state, dispatch] = useReducer(searchReducer, searchStateInit);
-  // console.log("searchContext", searchContext);
-
+  const { state, dispatch } = searchContext;
   const { data } = state;
   // console.log(dispatch);
-  // useEffect(() => {
-  //   axios
-  //     .get(PROXYCORS + "https://coronabrainapi.herokuapp.com/companies")
-  //     .then((res) => {
-  //       // this.setState({})
-  //       console.log(res.data);
-  //       dispatch({
-  //         type: "SET_DATA",
-  //         data: res.data,
-  //       });
-  //     })
-  //     .catch(console.error);
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(PROXYCORS + "https://coronabrainapi.herokuapp.com/companies")
+      .then((res) => {
+        dispatch({
+          type: "SET_DATA",
+          data: res.data,
+        });
+      })
+      .catch(console.error);
+  }, []);
   const SUPPLIERS = [
     {
       id: "s1",

@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useContext } from "react";
 import { Container, FormControl } from "react-bootstrap";
 import "../../styles/components/SearchBar/index.css";
 import "./index.css";
@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import {
   searchReducer,
   searchStateInit,
+  SearchContext,
 } from "../../store/context/search-context";
 
 const FilterBar = (props) => {
-  const [state, dispatch] = useReducer(searchReducer, searchStateInit);
+  const searchContext = useContext(SearchContext);
+  const { state } = searchContext;
   const { data } = state;
   return (
     <Container className="filter-bar text-body">
